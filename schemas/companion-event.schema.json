@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/lumen-light-companion/schemas/companion-event.schema.json",
+  "title": "Lumen Light Companion Event",
+  "type": "object",
+  "required": [
+    "event_id",
+    "event_type",
+    "session_id",
+    "surface_id",
+    "device_role",
+    "timestamp",
+    "sequence",
+    "payload"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "pattern": "^event_[a-zA-Z0-9_\\-]+$"
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "touch.select",
+        "touch.move",
+        "touch.resize",
+        "touch.pan",
+        "touch.zoom",
+        "ink.stroke",
+        "audio.chunk",
+        "gesture.air_draw",
+        "gesture.approve",
+        "gesture.reject",
+        "feedback.haptic",
+        "surface.selection_changed",
+        "surface.staged_change_ready",
+        "surface.change_accepted",
+        "surface.change_rejected",
+        "session.recording_started",
+        "session.recording_stopped",
+        "session.connection_changed"
+      ]
+    },
+    "session_id": {
+      "type": "string",
+      "pattern": "^session_[a-zA-Z0-9_\\-]+$"
+    },
+    "surface_id": {
+      "type": "string",
+      "pattern": "^surface_[a-zA-Z0-9_\\-]+$"
+    },
+    "device_role": {
+      "type": "string",
+      "enum": ["companion", "host"]
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "payload": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "expected_host_response": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}

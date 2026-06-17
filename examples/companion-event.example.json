@@ -1,0 +1,23 @@
+{
+  "event_id": "event_synthetic_touch_move_001",
+  "event_type": "touch.move",
+  "session_id": "session_synthetic_demo",
+  "surface_id": "surface_synthetic_hosted_whiteboard",
+  "device_role": "companion",
+  "timestamp": "2026-01-01T00:00:00Z",
+  "sequence": 17,
+  "payload": {
+    "viewport_id": "viewport_phone_touch_surface",
+    "object_id": "object_synthetic_card_001",
+    "pointer_id": "pointer_1",
+    "x_normalized": 0.42,
+    "y_normalized": 0.36,
+    "dx_normalized": 0.08,
+    "dy_normalized": -0.03,
+    "pressure": 0.61
+  },
+  "expected_host_response": {
+    "event_type": "feedback.haptic",
+    "pattern": "selection_move_tick"
+  }
+}
