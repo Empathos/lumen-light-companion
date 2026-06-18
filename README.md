@@ -75,8 +75,13 @@ The companion emits commands. The host owns state.
 ├── README.md
 ├── docs/
 │   ├── ARCHITECTURE.md
+│   ├── DEVELOPMENT.md
 │   ├── PRD.md
-│   └── ROADMAP.md
+│   ├── ROADMAP.md
+│   ├── adr/
+│   └── security-public-safety-review.md
+├── app/
+│   └── src/
 ├── examples/
 │   └── companion-event.example.json
 ├── prompts/
@@ -90,12 +95,13 @@ The companion emits commands. The host owns state.
 
 ## Current status
 
-This repository is an early product scaffold. It captures the companion concept,
-initial product requirements, protocol boundaries, and one synthetic event
-example. It does not yet contain Android application code.
+This repository is an early Android product scaffold. It captures the companion
+concept, initial product requirements, protocol boundaries, synthetic event
+examples, and a thin native Android/Compose app runway.
 
-The next technical milestone is to define the companion event schema after the
-hosted Lumen Light session/object protocol stabilizes.
+The Android scaffold is fake/local only. It has no live pairing, no live
+transport, no raw microphone or camera capture, no dangerous Android
+permissions, and no deployment configuration.
 
 Run the public-safe validation check:
 
@@ -104,12 +110,21 @@ python3 -m venv .venv
 . .venv/bin/activate
 python3 -m pip install -r requirements.txt
 python3 scripts/validate_companion_event.py examples/companion-event.example.json
+python3 scripts/public_safe_check.py
 ```
 
 Expected output:
 
 ```text
 LUMEN_LIGHT_COMPANION_EVENT_OK
+```
+
+Android verification requires a local JDK, Android SDK, and Gradle wrapper or
+compatible Gradle installation:
+
+```bash
+./gradlew :app:testDebugUnitTest
+./gradlew :app:assembleDebug
 ```
 
 ## Public/private model
