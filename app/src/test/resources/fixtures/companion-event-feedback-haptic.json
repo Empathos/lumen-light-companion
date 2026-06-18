@@ -1,0 +1,13 @@
+{
+  "event_id": "event_synthetic_feedback_haptic_001",
+  "event_type": "feedback.haptic",
+  "session_id": "session_synthetic_demo",
+  "surface_id": "surface_synthetic_hosted_whiteboard",
+  "device_role": "host",
+  "timestamp": "2026-01-01T00:00:02Z",
+  "sequence": 19,
+  "payload": {
+    "pattern": "selection_move_tick",
+    "reason": "synthetic_selection_move"
+  }
+}

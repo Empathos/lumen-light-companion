@@ -1,0 +1,12 @@
+{
+  "event_id": "event_synthetic_connection_lost_001",
+  "event_type": "session.connection_changed",
+  "session_id": "session_synthetic_demo",
+  "surface_id": "surface_synthetic_hosted_whiteboard",
+  "device_role": "host",
+  "timestamp": "2026-01-01T00:00:03Z",
+  "sequence": 20,
+  "payload": {
+    "status": "lost"
+  }
+}

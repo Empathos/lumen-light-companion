@@ -1,0 +1,18 @@
+{
+  "event_id": "event_synthetic_ink_stroke_001",
+  "event_type": "ink.stroke",
+  "session_id": "session_synthetic_demo",
+  "surface_id": "surface_synthetic_hosted_whiteboard",
+  "device_role": "companion",
+  "timestamp": "2026-01-01T00:00:01Z",
+  "sequence": 18,
+  "payload": {
+    "viewport_id": "viewport_phone_touch_surface",
+    "stroke_id": "stroke_synthetic_ink_001",
+    "phase": "started",
+    "points": [
+      { "x_normalized": 0.20, "y_normalized": 0.25, "pressure": 0.50 },
+      { "x_normalized": 0.24, "y_normalized": 0.29, "pressure": 0.55 }
+    ]
+  }
+}
